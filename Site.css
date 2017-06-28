@@ -1,0 +1,76 @@
+﻿/*---------------------------------------*/
+/* Trendy orange */
+.AccentColor
+{
+    color: #ED7F09;
+    font-weight: bold;
+}
+
+/* FaceBook blue */
+.BaseColor
+{
+    color: #3B5997;
+    background-color: White;
+}
+
+.BannerDiv
+{
+    background-color: #ED7F09;
+    height: 100px;
+}
+
+.BannerTD
+{
+    border: none;
+}
+
+.BannerText
+{
+    color: #3B5997;
+    background-color: #ED7F09;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: italic;
+
+ /* NOTE 2 of 2: Use of a line break, a table and text top padding is much easier
+    than trying to align these via CSS only: */
+
+    font-size: 30px;
+    padding-top: 5px;
+}
+
+.SelectionTD 
+{
+    border: 1px solid black;
+}        
+
+body, textarea
+{
+    font-size: 20px;
+}
+
+input
+{
+    font-size: 20px;
+}
+
+#report_level_1 
+{
+    font-weight: bold;
+}
+        
+#report_level_2 
+{
+    margin-left: 25px;
+}
+        
+#report_level_3 
+{
+    margin-left: 50px;
+}
+        
+#discography_json
+{
+    height: 600px;
+    width: 850px;
+}

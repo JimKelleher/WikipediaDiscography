@@ -1,0 +1,52 @@
+﻿
+<!-- NOTE: This is a partial HTML file that can be INCLUDEd into a full HTML file. It shows radio buttons that 
+enable the user to make his/her desired Discography Format input selection. -->
+
+<!-- ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+<!-- Part 1 of 2: HTML GUI elements -->
+
+<div id="discography_format" >
+
+    <h4 class="AccentColor">Discography Format</h4>
+
+    <input type="radio" name="discography_format" id="discography_format_html" value="HTML" />
+    <label for="discography_format_html" class="BaseColor">Report</label>
+    <br />
+
+    <input type="radio" name="discography_format" id="discography_format_json" value="JSON" />
+    <label for="discography_format_json" class="BaseColor">JSON</label>
+
+    <a href="http://jsonformatter.curiousconcept.com/" target="_blank">JSON Formatter & Validator</a>        
+    <br/>
+    <br/>
+    <br/>
+
+</div>
+
+<!-- ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+<!-- Part 2 of 2: JavaScript -->
+
+<script type="text/javascript">
+
+    function get_discography_format_selection() {
+        
+        var selection;
+
+        // Determine from the GUI what format we will be generating our discography in:
+        if (document.getElementById("discography_format_html").checked) {
+            selection = document.getElementById("discography_format_html").value;
+        } else {
+            selection = document.getElementById("discography_format_json").value;
+        }
+
+        return selection;
+    }
+
+    function set_discography_format_default() {
+
+        // Select the first one in the list:
+        document.getElementById("discography_format_html").checked = true;
+
+    }
+
+</script>
