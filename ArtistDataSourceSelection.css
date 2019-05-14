@@ -1,5 +1,0 @@
-﻿/* Without this entry, the offline artist data source "recorded on" date will have a box around it: */
-.artist_datasource_offline 
-{
-    border-style: none;
-}
