@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>SimulateNodeJS</title>
+
+    <script src="DiscographyOnlineArtistDataSource.js" type="text/javascript"></script>
+    <script src="JimRadioArtistWikipediaNaming1.js" type="text/javascript"></script>
+    <script src="JimRadioArtistWikipediaNaming2.js" type="text/javascript"></script>
+    <script src="UnicodeASCII.js" type="text/javascript"></script>
+    <script src="WikipediaDiscography.js" type="text/javascript"></script>
+    <script src="StandardStreams.js" type="text/javascript"></script>
+    <script src="ArtistDataSourceSelection.js" type="text/javascript"></script>
+    <script src="DiscographyOnlineSelection.js" type="text/javascript"></script>
+    <script src="WorkingWebBrowserServices.js" type="text/javascript"></script>
+
+    <script src="hardcoded_main.js" type="text/javascript"></script>
+    <script src="hardcoded_studio_albums.js" type="text/javascript"></script>
+    <script src="hardcoded_live_albums.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // <HEAD> GLOBAL VARIABLES:
+
+        // <HEAD> AVAILABLE FUNCTIONS:
+
+        var standard_streams_services;
+
+        function main() {
+
+            standard_streams_services = new standard_streams();
+
+          // This fails on a NodeJS file read:
+          //var the_path = "/?offline=JimRadioArtistWikipediaNaming1.json";
+            var the_path = "/?artist=Gerry+Rafferty&artist=Jefferson+Airplane&artist=The+Stylistics";
+
+            // Initialize Wikipedia discography startup services:
+            var wikipedia_discography_startup_services = new wikipedia_discography_startup();
+
+            //---------------------------------------------------------------------------------------------
+            // Get the URL arguments:
+          //var url_search = require("url").parse(request.url).search;
+            var url_search = the_path;
+
+            // Since this app has no GUI, it relies on the URL for arguments:
+            var artists_discographies_string = "<br>no URL arguments provided"; // init
+
+            if (url_search != null) {
+
+                // NOTE: This object will retain information about the URL arguments as passed
+                // for subsequent reference:
+                wikipedia_discography_startup_services.wikipedia_discography_argument(url_search);
+
+                //---------------------------------------------------------------------------------------------
+                // Online discographies come live from the Wikipedia website:
+                if (wikipedia_discography_startup_services.offline == false) {
+
+                    artists_discographies_string =
+                        wikipedia_discography_startup_services.get_artists_discographies_core(
+                            true,                                                   // discography_online
+                            "HTML",                                                 // discography_format
+                            wikipedia_discography_startup_services.artist_array,    // artist_array
+                            ""                                                      // offline_discographies
+                        );
+                    //---------------------------------------------------------------------------------------------
+                    // Offline discographies are static and come from JSON stored in a file:
+                } else {
+
+                    artists_discographies_string =
+                        wikipedia_discography_startup_services.get_artists_discographies_core(
+                            false,                                                              // discography_online
+                            "HTML",                                                             // discography_format
+                            [],                                                                 // artist_array
+                            wikipedia_discography_startup_services.offline_discographies_json   // offline_discographies:
+                        );
+                }
+                //---------------------------------------------------------------------------------------------
+            }
+
+            //---------------------------------------------------------------------------------------------
+
+
+    }
+
+    </script>
+
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        // <BODY> STARTUP PROCESSING:
+
+        main();
+
+    </script>
+
+</body>
+
+</html>
