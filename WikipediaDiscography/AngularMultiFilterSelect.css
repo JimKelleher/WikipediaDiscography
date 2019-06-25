@@ -1,0 +1,20 @@
+.selectBox {
+    width: 120px;
+}
+
+.selectBoxTitle {
+    width: 120px;
+    font-weight: bold;
+}
+
+#artist_master_table_div {
+    border: 1px solid black;
+    height: 156px;
+    width: 410px;
+    overflow-y: scroll;
+}
+
+#artist_master_table th {
+    text-align: left;
+}
+

@@ -1,0 +1,54 @@
+﻿
+<!-- NOTE: This is a partial HTML file that can be INCLUDEd into a full HTML file. It shows radio buttons that 
+enable the user to make his/her desired Output Format input selection. -->
+
+<!-- ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+<!-- Part 1 of 2: HTML GUI elements -->
+
+<div id="output_format" >
+
+    <h4 class="AccentColor">Output Format</h4>
+
+    <input type="radio" name="output_format" id="output_format_html" value="HTML" />
+    <label for="output_format_html" class="BaseColor">Report</label>
+    <br />
+
+    <input type="radio" name="output_format" id="output_format_json" value="JSON" />
+    <label for="output_format_json" class="BaseColor">JSON</label>
+
+    <a href="http://jsonformatter.curiousconcept.com/" target="_blank">JSON Formatter & Validator</a>
+    <br />
+    <a href="https://jsonformatter.org/" target="_blank">JSON Formatter & Validator</a>
+    <br />
+    <br/>
+    <br/>
+
+</div>
+
+<!-- ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+<!-- Part 2 of 2: JavaScript -->
+
+<script type="text/javascript">
+
+    function get_output_format_selection() {
+        
+        var selection;
+
+        // Determine from the GUI what format we will be generating our output in:
+        if (document.getElementById("output_format_html").checked) {
+            selection = document.getElementById("output_format_html").value;
+        } else {
+            selection = document.getElementById("output_format_json").value;
+        }
+
+        return selection;
+    }
+
+    function set_output_format_default() {
+
+        // Select the first one in the list:
+        document.getElementById("output_format_html").checked = true;
+
+    }
+
+</script>

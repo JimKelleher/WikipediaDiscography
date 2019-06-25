@@ -1,0 +1,47 @@
+
+This document, "WD & YA high-level calls.txt", stored in quadruplicate:
+
+	C:\a_dev\ASP\WikipediaDiscography\documents\
+	C:\a_dev\ASP\YoutubeAlbum\documents\
+	C:\a_dev\NodeJS\wikipediadiscography\documents\
+	C:\a_dev\NodeJS\youtubealbum\documents\
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+WikipediaDiscography.ts
+
+	wikipedia_discography_startup
+
+		// EXTERNAL INTERFACE 1 of 2:
+    		wikipedia_discography_argument				WD no, YA yes, 		WD Node yes, YA Node yes
+	
+    		// EXTERNAL INTERFACE 2 of 2:				WD yes, YA no, 		WD Node yes, YA Node no
+    		get_artists_discographies_core
+
+	wikipedia_discography
+
+    		// EXTERNAL INTERFACE 1 of 3:
+    		get_discographies_JSON_string				WD yes, YA yes, 		WD Node no, YA Node yes
+
+    		// EXTERNAL INTERFACE 2 of 3,				WD no, YA yes, 		WD Node no, WD Node yes
+		// not used by Wikipedia Discography, used by Youtube Album:	
+    		get_discography_arrays_from_JSON_string
+
+		// EXTERNAL INTERFACE 3 of 3:				WD yes, YA no,  		WD Node no, YA Node no
+    		get_HTML_report_from_JSON_string
+
+
+YoutubeAlbum.ts
+
+	youtube_album_startup
+
+		// EXTERNAL INTERFACE 1 of 2:
+		youtube_album_argument					YA no, YA Node yes
+
+		// EXTERNAL INTERFACE 2 of 2:
+		get_albums_core						YA yes, YA Node yes
+
+	youtube_album
+
+		// EXTERNAL INTERFACE 1 of 1:
+    		level_1_get_albums_artist					YA yes, YA Node no

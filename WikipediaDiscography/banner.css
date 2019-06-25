@@ -1,0 +1,20 @@
+/* Responsive design: */
+
+#bannerDivFull {
+    display: flex;
+    align-items: center;
+}
+
+.bannerDiv {
+    background-color: var(--accentColor);
+    padding: 20px 20px 20px 20px;
+}
+
+.bannerText {
+    color: var(--mainColor);
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+    padding-left: 20px;
+}
